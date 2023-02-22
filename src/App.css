@@ -29,12 +29,23 @@
   border-radius: 20px;
 }
 
-.start_btn{
+.quiz_start_btn{
   all: unset;
   padding: 15px 50px;
   font-size: 16px;
-  background-color: rgb(17, 103, 143);
+  background-color: rgb(29, 139, 190);
   margin-top: 3rem;
   cursor: pointer;
   border-radius: 10px;
+  transition: 0.3s;
 }
+.quiz_start_btn:hover{
+  color: rgb(29, 139, 190);
+  background-color: rgb(255, 255, 255);
+}
+.flex_col{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+

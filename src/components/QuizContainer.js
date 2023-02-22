@@ -1,18 +1,15 @@
-import { useContext } from 'react';
-// import Quiz_info from './Quiz_info';
-import  { QuizData } from "../Context"
+import React from 'react';
+import GameBegin from './GameBegin';
+import { GlobalContext } from '../Context/Context';
+import QuizBegin from './QuizBegin';
 
 const QuizContainer = () => {
-
-  const quizState = useContext(QuizData)
+  const {gameState} = GlobalContext();
 
   return (
     <div className="quiz_container">
-      <h2>Welcome to the Game</h2>
-
-      {/* {gameState === "begin" ? null : <button type='button' className='start_btn' onClick={ChangeGameState}>Let's Start</button>}
-      {gameState === "start_quiz" ? null : <div>Quiz Started</div>} */}
-
+      {gameState === "game_start" ? <GameBegin /> : null}
+      {gameState === "start_quiz" ? <QuizBegin /> : null}
     </div>
   );
 }
