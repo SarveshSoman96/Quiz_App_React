@@ -8,29 +8,20 @@ const initialState = {
     quizQuestions : [
         {
             id: 1,
-            q1: "What is use of HTml?",
-            o1: "Styling",
-            o2: "Scripting",
-            o3: "Markup",
-            o4: "Hosting",
+            questionName: "What is use of HTML?",
+            options: ["Styling","Scripting","Markup","Hosting"],
             ans: "Markup"
         },
         {
             id: 1,
-            q1: "What is use of CSS?",
-            o1: "Styling",
-            o2: "Scripting",
-            o3: "Markup",
-            o4: "Hosting",
+            questionName: "What is use of CSS?",
+            options: ["Scripting","Markup","Hosting","Styling"],
             ans: "Styling"
         },
         {
             id: 1,
-            q1: "What is use of JS?",
-            o1: "Styling",
-            o2: "Scripting",
-            o3: "Markup",
-            o4: "Hosting",
+            questionName: "What is use of JS?",
+            options: ["Styling","Markup","Scripting","Hosting"],
             ans: "Scripting"
         }
     ]
@@ -53,7 +44,7 @@ const ContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const chageGameStateHandler = (changeToState) => {
+    const changeGameStateHandler = (changeToState) => {
         dispatch({
             type: "Change_State",
             payload: changeToState
@@ -61,7 +52,7 @@ const ContextProvider = ({children}) => {
     };
     
     return(
-        <AppContext.Provider value={{...state , chageGameStateHandler}}>
+        <AppContext.Provider value={{...state , changeGameStateHandler}}>
             {children}
         </AppContext.Provider>
     );
