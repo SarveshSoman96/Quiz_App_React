@@ -70,3 +70,13 @@
 .next_question_btn{
   background-color: #6b86e6;
 }
+
+.selectedBtn{
+  color: #a95bc9;
+  background-color: #fff;
+}
+
+.error_text{
+  margin-top: 1rem;
+  color: red;
+}

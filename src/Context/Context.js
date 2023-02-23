@@ -34,7 +34,12 @@ const reducer = (state, {type, payload}) => {
                 ...state,
                 gameState: payload,
             }
-    
+        case "Change_Score":
+            return{
+                ...state,
+                score: state.score + payload
+            }
+
         default:
            return state;
     }
@@ -50,9 +55,16 @@ const ContextProvider = ({children}) => {
             payload: changeToState
         });
     };
+
+    const changeScoreHandler = (increaseScore) => {
+        dispatch({
+            type: "Change_Score",
+            payload: increaseScore
+        });
+    };
     
     return(
-        <AppContext.Provider value={{...state , changeGameStateHandler}}>
+        <AppContext.Provider value={{...state , changeGameStateHandler , changeScoreHandler}}>
             {children}
         </AppContext.Provider>
     );
