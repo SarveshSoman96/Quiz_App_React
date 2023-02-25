@@ -28,7 +28,7 @@ const initialState = {
             id: 4,
             questionName: "What is use of Netlify?",
             options: ["Styling","Markup","Scripting","Hosting"],
-            ans: "Scripting"
+            ans: "Hosting"
         }
     ]
 };
