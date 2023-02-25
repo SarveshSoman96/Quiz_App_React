@@ -13,14 +13,20 @@ const initialState = {
             ans: "Markup"
         },
         {
-            id: 1,
+            id: 2,
             questionName: "What is use of CSS?",
             options: ["Scripting","Markup","Hosting","Styling"],
             ans: "Styling"
         },
         {
-            id: 1,
+            id: 3,
             questionName: "What is use of JS?",
+            options: ["Styling","Markup","Scripting","Hosting"],
+            ans: "Scripting"
+        },
+        {
+            id: 4,
+            questionName: "What is use of Netlify?",
             options: ["Styling","Markup","Scripting","Hosting"],
             ans: "Scripting"
         }
