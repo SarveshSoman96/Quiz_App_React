@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState  } from 'react';
 import { GlobalContext } from '../Context/Context';
 
 const QuizBegin = () => {
     const [questionNumber, setQuestionNumber] = useState(0);
-    const [optionChosen, setOptionChosen] = useState("")
+    const [optionChosen, setOptionChosen] = useState("");
 
     const {quizQuestions , changeGameStateHandler , changeScoreHandler} = GlobalContext();
-    const classesForButton = `options_btn`
+    const classesForButton = `options_btn`;
+
+    
 
     const nextQuestionHandle = (e) => {
       try {
@@ -15,20 +17,21 @@ const QuizBegin = () => {
         }
         setQuestionNumber(questionNumber + 1)
         
-        if((optionChosen === quizQuestions[questionNumber].ans) && (questionNumber + 1 === quizQuestions.length)){
+        if(questionNumber + 1 === quizQuestions.length){
           changeGameStateHandler("End_quiz")
         }
+       
         
       } catch (error) {
           console.log(error.message)
       }
 
-      
     };
 
+    const quizDIsplayClasses = `questions_container display_content`
 
   return (
-    <div className="questions_container flex_col">
+    <div className={quizDIsplayClasses}>
       <h2 className="question">{quizQuestions[questionNumber].questionName}</h2>
       <div className="Options_block flex_col">
         {quizQuestions[questionNumber].options.map((optionName) => (
@@ -38,7 +41,6 @@ const QuizBegin = () => {
             value={optionName}
             onClick={(e) => {
               setOptionChosen(e.target.value);
-              console.log(e.target.value)
             }}
           >
             {optionName}
@@ -51,7 +53,7 @@ const QuizBegin = () => {
           className="options_btn next_question_btn"
           onClick={nextQuestionHandle}
         >
-         Next Question
+         {questionNumber + 1 === quizQuestions.length ? "End Quiz" : "Next Question"}
         </button>
       </div>
     </div>

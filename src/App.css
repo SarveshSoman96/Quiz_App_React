@@ -27,6 +27,7 @@
   padding: 2rem;
   text-align: center;
   border-radius: 20px;
+  box-shadow: 0 0 20px  #a95bc9;
 }
 
 .quiz_start_btn{
@@ -63,6 +64,10 @@
   cursor: pointer;
 }
 
+.question{
+  margin-bottom: 1rem;
+}
+
 .next-question-block{
   margin-top: 2rem;
 }
@@ -80,3 +85,34 @@
   margin-top: 1rem;
   color: red;
 }
+
+.flex_col > p {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.quiz_score{
+  font-size: 1.5rem;
+  color: #6b86e6;
+}
+
+.selected_option{
+  transform: scale(0.9);
+  background: transparent;
+  color: #fff;
+}
+
+.display_content{
+  animation: display_text 0.3s ease-in; 
+}
+
+@keyframes display_text {
+  from{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+} 
